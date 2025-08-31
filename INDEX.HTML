@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raahim Electronics Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e3f2fd; /* halka blue background */
+    }
+
+    header {
+      background: #0d47a1;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px 0;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      color: white;
+    }
+
+    .cart { background: #2196f3; }
+    .buy { background: #4caf50; }
+    .loc { background: #ff9800; }
+    .pay { background: #9c27b0; }
+
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Raahim Electronics Store</h1>
+    <p>Call: 03202754537 | Gmail: raahimtiger66@gmail.com</p>
+  </header>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_SL1500_.jpg" alt="iPhone 15 Pro">
+      <h3>iPhone 15 Pro</h3>
+      <p class="price">PKR 350,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="card">
+      <img src="download.jpg" alt="Samsung Galaxy S23">
+      <h3>Samsung Galaxy S23</h3>
+      <p class="price">PKR 290,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods Pro 2">
+      <h3>Apple AirPods Pro 2</h3>
+      <p class="price">PKR 65,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="card">
+      <img src="download (1).jpg" alt="Galaxy Buds2 Pro">
+      <h3>Samsung Galaxy Buds2 Pro</h3>
+      <p class="price">PKR 55,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61aUBxqc5PL._AC_SL1500_.jpg" alt="MacBook Pro 16">
+      <h3>MacBook Pro 16</h3>
+      <p class="price">PKR 700,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/81gC7frRJyL._AC_SL1500_.jpg" alt="iPad Pro 12.9">
+      <h3>iPad Pro 12.9</h3>
+      <p class="price">PKR 280,000</p>
+      <button class="btn cart">Add to Cart</button>
+      <button class="btn buy">Buy Now</button>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin:20px;">
+    <button class="btn loc" onclick="getLocation()">📍 Show My Location</button>
+    <button class="btn pay" onclick="alert('💳 Online Payment System Coming Soon!')">💳 Pay Online</button>
+    <p id="location"></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Raahim Electronics | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.getElementById("location").innerHTML = "Location not supported.";
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("location").innerHTML =
+        "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+  </script>
+</body>
+</html>
+<!-- Customer Review Form -->
+<div style="padding:30px; background:#f5f5f5; margin:20px; border-radius:10px;">
+  <h2 style="text-align:center;">⭐ Leave a Review</h2>
+
+  <!-- Rating stars -->
+  <div style="text-align:center; margin:15px;">
+    <label>Rate Us: </label>
+    <select>
+      <option value="5">★★★★★ (5 - Excellent)</option>
+      <option value="4">★★★★☆ (4 - Good)</option>
+      <option value="3">★★★☆☆ (3 - Average)</option>
+      <option value="2">★★☆☆☆ (2 - Poor)</option>
+      <option value="1">★☆☆☆☆ (1 - Bad)</option>
+    </select>
+  </div>
+
+  <!-- Comment Box -->
+  <div style="text-align:center; margin:15px;">
+    <textarea placeholder="Write your review here..." rows="5
